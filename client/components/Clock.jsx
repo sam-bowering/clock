@@ -7,11 +7,11 @@ class Clock extends React.Component {
   }
 
   handleStartTime = () => {
-
+    
   }
 
   handleConvertToDisplay = () => {
-    switch (this.state)
+
   }
 
   render () {
