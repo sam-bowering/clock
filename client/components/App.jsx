@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Clock from './Clock'
+
 const App = () => {
   return (
     <div>
-      <h1>React Development Has Begun!</h1>
+      <Clock />
     </div>
   )
 }
