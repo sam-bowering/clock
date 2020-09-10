@@ -7,37 +7,11 @@ class Clock extends React.Component {
     timeActive: false
   }
 
-  handleStartTime = () => {
-    switch (this.state.timeActive) {
-      case false:
-        this.setState({
-          timeActive: true
-        })
-        break
-      case true:
-        this.setState({
-          timeActive: false
-        })
-        break
-      default:
-        break
-    }
-
-    function tick () {
-      if (this.state.minutes < 60) {
-        this.setState({
-          minutes: this.state.minutes + 1
-        })
-      } else if (this.state.hours < 24) {
-        this.setState({
-          hours: this.state.hours + 1,
-          minutes: 0
-        })
-      }
-    }
-
-    while (this.state.timeActive === true) {
-      setTimeout(tick, 1000)
+  handleStartStopTime = (hours, minutes) => {
+    if (this.state.timeActive) {
+      this.setState({ timeActive: false })
+    } else if (!this.state.Active) {
+      this.setState({ timeActive: true })
     }
   }
 
@@ -49,7 +23,7 @@ class Clock extends React.Component {
     return (
       <>
         <h2>{this.state.hours}:{this.state.minutes}</h2>
-        <button onClick={this.handleStartTime}>Start / Stop</button>
+        <button onClick={() => this.handleStartStopTime(this.state.hours, this.state.minutes)}>Start / Stop</button>
       </>
     )
   }
